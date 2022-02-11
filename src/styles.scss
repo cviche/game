@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Questrial&family=Raleway:ital,wght@0,900;1,400&display=swap");
+
+body {
+  font-family: "Raleway", sans-serif;
+  background: #5e5b5b !important;
+  color: white;
+}
+
+.bg-green {
+  background-color: #91d990 !important;
+}
+
+.ff-quest {
+  font-family: "Questrial", sans-serif;
+}
