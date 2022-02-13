@@ -1,10 +1,13 @@
 <div class="modal-container d-flex align-items-center justify-content-center">
     <div class="rules-container">
-        <h3>Rules</h3>
+        <div class="rules-header">
+            <h2 class="rules-exit text-danger px-2 m-0">&#x2715;</h2>
+            <h3 class="rules-text">Rules</h3>
+        </div>
         <p class="text-center">You and the bot will each get three turns
             to choose a number. The way
             to win is to get the highest
-            positive number. </p>
+            positive number when adding all the numbers you have chosen. </p>
         <p class="text-center">
             The catch is that one of three
             rules will be applied at the end
@@ -13,7 +16,7 @@
             chose will be turned negative</p>
         <p class="text-center">2. Odd numbers the player chose will turn negative</p>
         <p class="text-center">3. Even numbers the player chose will turn negative</p>
-        <form>
+        <form class="d-flex flex-column justify-content-center">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">@</span>
                 <input type="text" class="form-control" placeholder="Enter Player Name" aria-label="Name"
@@ -25,7 +28,7 @@
                     I agree to the rules listed above.
                 </label>
             </div>
-            <button class="btn btn-light">Continue</button>
+            <button type="submit" class="btn btn-light align-self-center mb-4">Continue</button>
         </form>
     </div>
 </div>
