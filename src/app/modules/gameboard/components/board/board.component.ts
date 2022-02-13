@@ -21,8 +21,4 @@ export class BoardComponent implements OnInit, OnDestroy {
       console.log("The board is being destroyed...")
   }
 
-  startBoard(): void {
-    this.boardService.startGame();
-  }
-
 }
