@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BoardService } from '../../services/board.service';
 
 @Component({
   selector: 'start-game-button',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartGameButtonComponent implements OnInit {
 
-  constructor() { }
+  constructor(private boardService : BoardService) { }
 
   ngOnInit(): void {
+  }
+
+  startGame() {
+    this.boardService.boardState.next("in-progress");
   }
 
 }
