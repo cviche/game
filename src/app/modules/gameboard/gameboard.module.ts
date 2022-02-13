@@ -12,9 +12,6 @@ import { GameboardRoutingModule } from './gameboard-routing.module';
   imports: [
     GameboardRoutingModule,
     CommonModule
-  ],
-  exports: [
-    BoardComponent
   ]
 })
 export class GameboardModule { }
