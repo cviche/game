@@ -5,6 +5,7 @@ import { StartGameButtonComponent } from './components/start-game-button/start-g
 import { GameboardRoutingModule } from './gameboard-routing.module';
 import { InitialStateComponent } from './components/initial-state/initial-state.component';
 import { GameStateComponent } from './components/game-state/game-state.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { GameStateComponent } from './components/game-state/game-state.component
     StartGameButtonComponent,
     InitialStateComponent,
     GameStateComponent,
+    ModalComponent,
   ],
   imports: [
     GameboardRoutingModule,
