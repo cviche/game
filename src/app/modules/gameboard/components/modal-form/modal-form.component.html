@@ -1,14 +1,14 @@
-<form class="d-flex flex-column justify-content-center">
+<form [formGroup]="modalForm" (ngSubmit)="submitForm()" class="d-flex flex-column justify-content-center">
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">@</span>
         <input type="text" class="form-control" placeholder="Enter Player Name" aria-label="Name"
-            aria-describedby="basic-addon1">
+            aria-describedby="basic-addon1" formControlName="name">
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+        <input class="form-check-input" type="checkbox" id="flexCheckChecked" formControlName="agree">
         <label class="form-check-label" for="flexCheckChecked">
             I agree to the rules listed above.
         </label>
     </div>
-    <button type="submit" class="btn btn-light align-self-center mb-4">Continue</button>
+    <button [disabled]="!modalForm.valid" type="submit" class="btn btn-light align-self-center mb-4">Continue</button>
 </form>
