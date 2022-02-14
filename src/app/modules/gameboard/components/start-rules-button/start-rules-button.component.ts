@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BoardService } from '../../services/board.service';
 
 @Component({
   selector: 'start-rules-button',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartRulesButtonComponent implements OnInit {
 
-  constructor() { }
+  constructor(private boardService : BoardService) { }
 
   ngOnInit(): void {
+  }
+
+  startRules(): void {
+    this.boardService.startRules();
   }
 
 }
