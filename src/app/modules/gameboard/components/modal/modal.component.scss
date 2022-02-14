@@ -1,7 +1,8 @@
 .modal-container {
   position: absolute;
-  width: 100%;
   top: 0;
+  width: 100%;
+  min-height: 100%;
   background-color: rgb(1, 1, 1, 0.5);
 }
 
@@ -10,9 +11,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   background-color: #8fec8e;
-  width: 350px;
+  width: 375px;
 }
 
 .rules-header {
@@ -28,6 +28,7 @@
 
 .rules-exit {
   align-self: flex-end;
+  cursor: pointer;
 }
 
 @media all and (max-width: 1000px) {
