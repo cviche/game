@@ -1,7 +1,7 @@
-<div class="modal-container d-flex align-items-center justify-content-center">
+<div @openClose class="modal-container d-flex align-items-center justify-content-center">
     <div class="rules-container">
         <div class="rules-header">
-            <h2 class="rules-exit text-danger px-2 m-0">&#x2715;</h2>
+            <h2 class="rules-exit text-danger px-2 m-0" (click)="exitRules()">&#x2715;</h2>
             <h3 class="rules-text">Rules</h3>
         </div>
         <p class="text-center">You and the bot will each get three turns
