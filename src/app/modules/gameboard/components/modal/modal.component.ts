@@ -7,6 +7,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+
 @Component({
   selector: 'modal',
   templateUrl: './modal.component.html',
@@ -15,10 +16,8 @@ import {
     trigger('openClose', [
       state('void', style({opacity: 0})),
       state('*', style({opacity: 1})),
-      transition(':enter', [animate('1s')]),
-      transition(':leave', [
-    animate('1400ms', style({ opacity: 0 }))
-  ])
+      transition(':enter', [animate('250ms')]),
+      transition(':leave', [animate('250ms')])
     ])
   ]
 })
