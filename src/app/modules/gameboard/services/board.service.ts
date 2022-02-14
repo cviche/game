@@ -12,8 +12,12 @@ export class BoardService {
       this.boardState.next("in-progress");
    }
 
-   startRules() : void{
+   startRules() : void {
      this.boardState.next("rules");
+   }
+
+   exitRules() : void {
+    this.boardState.next("initial");
    }
 
 }
