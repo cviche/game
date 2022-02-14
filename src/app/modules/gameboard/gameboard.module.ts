@@ -10,6 +10,7 @@ import { InitialStateComponent } from './components/initial-state/initial-state.
 import { GameStateComponent } from './components/game-state/game-state.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { StartRulesButtonComponent } from './components/start-rules-button/start-rules-button.component';
+import { ModalFormComponent } from './components/modal-form/modal-form.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { StartRulesButtonComponent } from './components/start-rules-button/start
     GameStateComponent,
     ModalComponent,
     StartRulesButtonComponent,
+    ModalFormComponent,
   ],
   imports: [
     GameboardRoutingModule,
