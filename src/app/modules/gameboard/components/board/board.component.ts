@@ -1,10 +1,21 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BoardService } from '../../services/board.service';
+import {
+  trigger,
+  transition,
+  query,
+  animateChild
+} from '@angular/animations';
 
 @Component({
   selector: 'board',
   templateUrl: './board.component.html',
-  styleUrls: ['./board.component.scss']
+  styleUrls: ['./board.component.scss'],
+  animations: [trigger('container', [
+		transition(':enter, :leave', [
+			query('@*', animateChild()),
+		]),
+	])]
 })
 export class BoardComponent implements OnInit, OnDestroy {
   state: string = "initial";
