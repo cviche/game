@@ -11,4 +11,9 @@ export class BoardService {
    startGame() : void {
       this.boardState.next("in-progress");
    }
+
+   startRules() : void{
+     this.boardState.next("rules");
+   }
+
 }
