@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from "@angular/forms";
+
 import { BoardComponent } from './components/board/board.component';
 import { StartGameButtonComponent } from './components/start-game-button/start-game-button.component';
 import { GameboardRoutingModule } from './gameboard-routing.module';
@@ -8,7 +11,6 @@ import { GameStateComponent } from './components/game-state/game-state.component
 import { ModalComponent } from './components/modal/modal.component';
 import { StartRulesButtonComponent } from './components/start-rules-button/start-rules-button.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     GameboardRoutingModule,
     CommonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ]
 })
 export class GameboardModule { }
