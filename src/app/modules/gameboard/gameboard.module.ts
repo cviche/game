@@ -8,6 +8,8 @@ import { GameStateComponent } from './components/game-state/game-state.component
 import { ModalComponent } from './components/modal/modal.component';
 import { StartRulesButtonComponent } from './components/start-rules-button/start-rules-button.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     BoardComponent,
@@ -19,7 +21,8 @@ import { StartRulesButtonComponent } from './components/start-rules-button/start
   ],
   imports: [
     GameboardRoutingModule,
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule
   ]
 })
 export class GameboardModule { }
