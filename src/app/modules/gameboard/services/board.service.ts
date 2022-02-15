@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from "rxjs";
 import { BoardMaster } from '../interfaces/board-master.interface';
+import { CardChosen } from '../interfaces/card-chosen.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -38,14 +39,21 @@ export class BoardService {
    }
 
    removeCard(cardValue: number) {
-      const oldBoardMaster = this.boardMaster.getValue();
-     if(oldBoardMaster.currentTurn === "You") {
-      const newBoardCards = oldBoardMaster.cards.filter((currentCardValue : number) => currentCardValue !== cardValue);
+      const oldBoardMaster : BoardMaster = this.boardMaster.getValue();
+      const updatedData: CardChosen = {};
+      const newBoardCards : number[] = oldBoardMaster.cards.filter((currentCardValue : number) => currentCardValue !== cardValue);
+      updatedData.cards = newBoardCards;
+      if(oldBoardMaster.currentTurn === "You") {
+        updatedData.currentTurn = "Bot";
+        updatedData.playerScore = oldBoardMaster.playerScore + cardValue;
+      }
+      else {
+        updatedData.currentTurn = "You";
+        updatedData.botScore = oldBoardMaster.botScore + cardValue;
+      }
       this.boardMaster.next({...oldBoardMaster, 
-      currentTurn: "Bot",
-      cards: newBoardCards
+        ...updatedData
       });
-     }
     }
 
     initialBoardMaster() : BoardMaster {
