@@ -20,7 +20,9 @@ export class BoardService {
         state: "in-progress",
         currentTurn: "You",
         cards: newCards,
-        playerName
+        playerName,
+        playerScore: 0,
+        botScore: 0
       });
    }
 
@@ -66,7 +68,9 @@ export class BoardService {
         currentTurn: "You",
         playerScore: 0,
         botScore: 0,
-        playerName: ""
+        playerName: "",
+        winner: "",
+        rule: 0
       }
     }
 }

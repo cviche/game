@@ -5,5 +5,7 @@ export interface BoardMaster {
     currentTurn: string,
     playerScore: number,
     playerName: string
-    botScore: number
+    botScore: number,
+    rule: number
+    winner: string
 }
