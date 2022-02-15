@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ScoreCardComponent implements OnInit {
   @Input() totalScore: number = 0;
+  @Input() playerName!: string;
   constructor() { }
 
   ngOnInit(): void {
