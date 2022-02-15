@@ -8,6 +8,7 @@ export class BoardService {
   boardState : Subject<string> = new Subject<string>();
   boardCards: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
   maxCards: number = 6;
+  playersTurn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
   constructor() {}
 
@@ -18,6 +19,7 @@ export class BoardService {
       }
       this.boardCards.next(newCards);
       this.boardState.next("in-progress");
+      this.playersTurn.next(true);
    }
 
    endGame() : void {
@@ -34,8 +36,10 @@ export class BoardService {
    }
 
    removeCard(cardValue: number) {
+     if(this.playersTurn.getValue()) {
       const newBoardCards = this.boardCards.getValue().filter((currentCardValue : number) => currentCardValue !== cardValue);
+      this.playersTurn.next(false);
       this.boardCards.next(newBoardCards);
+     }
     }
-
 }
