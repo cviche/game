@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { container } from '../../animations/animations.animation';
 import { BoardMaster } from '../../interfaces/board-master.interface';
 import { BoardService } from '../../services/board.service';
@@ -9,7 +9,7 @@ import { BoardService } from '../../services/board.service';
   styleUrls: ['./game-state.component.scss'],
   animations: container
 })
-export class GameStateComponent implements OnInit, OnDestroy {
+export class GameStateComponent implements OnInit {
   cards!: number[];
   playerScore!: number;
   botScore!: number;
@@ -31,10 +31,6 @@ export class GameStateComponent implements OnInit, OnDestroy {
         this.letBotChooseCard();
       } 
     })
-  }
-
-  ngOnDestroy() : void {
-    this.boardService.endGame();
   }
 
   letBotChooseCard() : void{
