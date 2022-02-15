@@ -11,7 +11,9 @@ export class GameStateComponent implements OnInit, OnDestroy {
   constructor(private boardService: BoardService) { }
 
   ngOnInit(): void {
-    this.cards = this.boardService.totalCards;
+    this.boardService.boardCards.subscribe((cards : number[]) => {
+      this.cards = cards;
+    })
   }
 
   ngOnDestroy() : void {
