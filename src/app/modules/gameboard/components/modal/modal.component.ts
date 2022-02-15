@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BoardService } from '../../services/board.service';
-import { fadeInOut } from '../../animations/fadeInOut.animation';
+import { fadeInOut } from '../../animations/animations.animation';
 
 @Component({
   selector: 'modal',

@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { container } from '../../animations/fadeInOut.animation';
+import { container } from '../../animations/animations.animation';
 import { BoardService } from '../../services/board.service';
 
 
