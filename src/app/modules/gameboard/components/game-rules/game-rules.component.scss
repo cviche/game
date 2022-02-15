@@ -1,0 +1,38 @@
+.modal-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgb(1, 1, 1, 0.5);
+}
+
+.rules-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #8fec8e;
+  width: 375px;
+}
+
+.rules-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center !important;
+}
+
+.rules-text {
+  text-align: center;
+}
+
+.rules-exit {
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+@media all and (max-width: 1000px) {
+  .rules-container {
+    width: 75%;
+  }
+}
