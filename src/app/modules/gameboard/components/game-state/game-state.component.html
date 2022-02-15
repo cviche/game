@@ -2,7 +2,7 @@
     <h1 class="text-light py-2">Reaction Game</h1>
     <score-card></score-card>
     <div class="score-card-container">
-        <number-card *ngFor="let card of cards" [value]="card"></number-card>
+        <number-card @container *ngFor="let card of cards" [value]="card"></number-card>
     </div>
     <score-card></score-card>
 </div>
