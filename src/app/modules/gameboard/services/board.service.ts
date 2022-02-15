@@ -25,8 +25,9 @@ export class BoardService {
    }
 
    endGame() : void {
-    //  this.totalCards = [];
-    //  this.boardCards.next([])
+     const oldBoardMaster = this.boardMaster.getValue();
+     this.boardMaster.next({...oldBoardMaster, state: "end"});
+
    }
 
    startRules() : void {

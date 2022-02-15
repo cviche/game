@@ -24,7 +24,10 @@ export class GameStateComponent implements OnInit, OnDestroy {
       this.botScore = boardMaster.botScore;
       this.currentTurn = boardMaster.currentTurn;
       this.playerName = boardMaster.playerName;
-      if(boardMaster.currentTurn === "Bot") {
+      if(boardMaster.cards.length === 0) {
+        this.boardService.endGame();
+      }
+      else if(boardMaster.currentTurn === "Bot") {
         this.letBotChooseCard();
       } 
     })
