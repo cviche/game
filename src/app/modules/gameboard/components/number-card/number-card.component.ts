@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { BoardService } from '../../services/board.service';
 
 @Component({
   selector: 'number-card',
@@ -7,9 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NumberCardComponent implements OnInit {
   @Input() value!: number;
-  constructor() { }
+  constructor(private boardService : BoardService) { }
 
   ngOnInit(): void {
+  }
+
+  removeCard(): void {
+    this.boardService.removeCard(this.value);
   }
 
 }
