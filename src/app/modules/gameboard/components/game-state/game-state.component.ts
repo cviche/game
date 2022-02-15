@@ -13,6 +13,7 @@ export class GameStateComponent implements OnInit, OnDestroy {
   cards!: number[];
   playerScore!: number;
   botScore!: number;
+  currentTurn!: string;
   constructor(private boardService: BoardService) { }
 
   ngOnInit(): void {
@@ -20,6 +21,7 @@ export class GameStateComponent implements OnInit, OnDestroy {
       this.cards = boardMaster.cards;
       this.playerScore = boardMaster.playerScore;
       this.botScore = boardMaster.botScore;
+      this.currentTurn = boardMaster.currentTurn;
       if(boardMaster.currentTurn === "Bot") {
         this.letBotChooseCard();
       } 

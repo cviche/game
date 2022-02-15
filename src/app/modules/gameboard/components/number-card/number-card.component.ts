@@ -10,13 +10,10 @@ import { BoardMaster } from '../../interfaces/board-master.interface';
 })
 export class NumberCardComponent implements OnInit {
   @Input() value!: number;
-  currentTurn!: string;
+  @Input() currentTurn?: string;
   constructor(private boardService : BoardService) { }
 
   ngOnInit(): void {
-    this.boardService.boardMaster.subscribe((boardMaster : BoardMaster) => {
-      this.currentTurn = boardMaster.currentTurn;
-    })
   }
 
   removeCard(): void {
