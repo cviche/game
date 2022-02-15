@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./score-card.component.scss']
 })
 export class ScoreCardComponent implements OnInit {
-
+  totalScore: number = 0;
   constructor() { }
 
   ngOnInit(): void {
