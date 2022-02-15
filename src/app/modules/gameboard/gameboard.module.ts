@@ -14,6 +14,7 @@ import { ScoreCardComponent } from './components/score-card/score-card.component
 import { NumberCardComponent } from './components/number-card/number-card.component';
 import { PlayersTurnComponent } from './components/players-turn/players-turn.component';
 import { EndStateComponent } from './components/end-state/end-state.component';
+import { GameRulesComponent } from './components/game-rules/game-rules.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { EndStateComponent } from './components/end-state/end-state.component';
     NumberCardComponent,
     PlayersTurnComponent,
     EndStateComponent,
+    GameRulesComponent,
   ],
   imports: [
     GameboardRoutingModule,
