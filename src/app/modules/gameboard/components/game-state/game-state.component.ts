@@ -12,7 +12,6 @@ export class GameStateComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.cards = this.boardService.totalCards;
-    console.log(this.cards);
   }
 
   ngOnDestroy() : void {
