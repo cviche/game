@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./players-turn.component.scss']
 })
 export class PlayersTurnComponent implements OnInit {
-  // @Input() playerName!: string;
+  @Input() currentPlayerName!: string;
   constructor() { }
 
   ngOnInit(): void {

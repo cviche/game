@@ -4,6 +4,6 @@
     <div class="score-card-container">
         <number-card @container *ngFor="let card of cards" [value]="card" [currentTurn]="currentTurn"></number-card>
     </div>
-    <players-turn [playerName]="playerName"></players-turn>
+    <players-turn [currentPlayerName]="currentTurn"></players-turn>
     <score-card [totalScore]="botScore" [playerName]="'Bot'"></score-card>
 </div>
