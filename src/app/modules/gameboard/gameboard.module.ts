@@ -12,6 +12,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { StartRulesButtonComponent } from './components/start-rules-button/start-rules-button.component';
 import { ModalFormComponent } from './components/modal-form/modal-form.component';
 import { ScoreCardComponent } from './components/score-card/score-card.component';
+import { NumberCardComponent } from './components/number-card/number-card.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ScoreCardComponent } from './components/score-card/score-card.component
     StartRulesButtonComponent,
     ModalFormComponent,
     ScoreCardComponent,
+    NumberCardComponent,
   ],
   imports: [
     GameboardRoutingModule,
