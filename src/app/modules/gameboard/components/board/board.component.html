@@ -1,3 +1,8 @@
 <initial-state *ngIf="state === 'initial'"></initial-state>
-<modal @container *ngIf="state === 'rules'"></modal>
+<modal @container *ngIf="state === 'rules'">
+    <game-rules></game-rules>
+</modal>
 <game-state *ngIf="state === 'in-progress'"></game-state>
+<modal @container *ngIf="state === 'end'">
+    <end-state></end-state>
+</modal>
