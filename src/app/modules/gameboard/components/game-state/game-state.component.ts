@@ -20,12 +20,22 @@ export class GameStateComponent implements OnInit, OnDestroy {
       this.cards = boardMaster.cards;
       this.playerScore = boardMaster.playerScore;
       this.botScore = boardMaster.botScore;
-
+      if(boardMaster.currentTurn === "Bot") {
+        this.letBotChooseCard();
+      } 
     })
   }
 
   ngOnDestroy() : void {
     this.boardService.endGame();
+  }
+
+  letBotChooseCard() : void{
+    setTimeout(() => {
+          const botChoice = Math.floor(Math.random()*this.cards.length);
+          console.log(botChoice);
+          this.boardService.removeCard(this.cards[botChoice]);
+    }, 500)
   }
 
 }
