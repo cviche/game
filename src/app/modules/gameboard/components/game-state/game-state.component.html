@@ -1,1 +1,9 @@
-<p>game-state works!</p>
+<div class="board-container d-flex flex-column align-items-center">
+    <h1 class="text-light py-2">Reaction Game</h1>
+    <score-card></score-card>
+    <div class="score-card-container">
+        <number-card *ngFor="let card of cards"></number-card>
+    </div>
+
+    <score-card></score-card>
+</div>
