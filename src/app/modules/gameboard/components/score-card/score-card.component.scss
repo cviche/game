@@ -1,0 +1,11 @@
+.score-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 6px;
+  border: 5px solid white;
+  background-color: #8fec8e;
+  width: 500px;
+  font-weight: bold;
+  color: white;
+}
