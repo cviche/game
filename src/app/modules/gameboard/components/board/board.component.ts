@@ -17,19 +17,14 @@ import {
 		]),
 	])]
 })
-export class BoardComponent implements OnInit, OnDestroy {
+export class BoardComponent implements OnInit {
   state: string = "initial";
   constructor(private boardService : BoardService) { }
 
   ngOnInit(): void {
     console.log("The board is being initialized...")
     this.boardService.boardState.subscribe((state) => {
-      console.log(state);
       this.state = state;
     })
   }
-  ngOnDestroy(): void {
-      console.log("The board is being destroyed...")
-  }
-
 }
