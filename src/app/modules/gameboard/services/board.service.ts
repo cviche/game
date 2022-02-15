@@ -33,4 +33,9 @@ export class BoardService {
     this.boardState.next("initial");
    }
 
+   removeCard(cardValue: number) {
+      const newBoardCards = this.boardCards.getValue().filter((currentCardValue : number) => currentCardValue !== cardValue);
+      this.boardCards.next(newBoardCards);
+    }
+
 }
