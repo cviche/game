@@ -16,12 +16,10 @@ export class ModalFormComponent implements OnInit {
       name: ["", [Validators.required, Validators.minLength(1)]],
       agree: [false, [Validators.required, Validators.requiredTrue]]
     })
-    console.log(this.modalForm.errors)
-
   }
 
   submitForm() {
-    this.boardService.startGame();
+    this.boardService.startGame(this.modalForm.value.name);
   }
 
 }

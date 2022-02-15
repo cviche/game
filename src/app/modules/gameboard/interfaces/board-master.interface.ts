@@ -4,5 +4,6 @@ export interface BoardMaster {
     maxCards: number,
     currentTurn: string,
     playerScore: number,
+    playerName: string
     botScore: number
 }

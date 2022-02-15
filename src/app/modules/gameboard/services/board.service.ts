@@ -10,7 +10,7 @@ export class BoardService {
   boardMaster: BehaviorSubject<BoardMaster> = new BehaviorSubject<BoardMaster>(this.initialBoardMaster());
   constructor() {}
 
-   startGame() : void {
+   startGame(playerName: string) : void {
       const oldBoardMaster = this.boardMaster.getValue();
 
       // Creates an array from 1 to maxCards
@@ -19,7 +19,8 @@ export class BoardService {
       this.boardMaster.next({...oldBoardMaster, 
         state: "in-progress",
         currentTurn: "You",
-        cards: newCards
+        cards: newCards,
+        playerName
       });
    }
 
@@ -63,7 +64,8 @@ export class BoardService {
         maxCards: 6,
         currentTurn: "You",
         playerScore: 0,
-        botScore: 0
+        botScore: 0,
+        playerName: ""
       }
     }
 }

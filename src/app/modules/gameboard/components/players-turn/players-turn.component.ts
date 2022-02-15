@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'players-turn',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./players-turn.component.scss']
 })
 export class PlayersTurnComponent implements OnInit {
-
+  // @Input() playerName!: string;
   constructor() { }
 
   ngOnInit(): void {
