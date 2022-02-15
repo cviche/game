@@ -18,6 +18,10 @@ export class BoardService {
       this.boardState.next("in-progress");
    }
 
+   endGame() : void {
+     this.totalCards = [];
+   }
+
    startRules() : void {
      this.boardState.next("rules");
    }
