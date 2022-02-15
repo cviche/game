@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { container } from '../../animations/animations.animation';
+import { BoardMaster } from '../../interfaces/board-master.interface';
 import { BoardService } from '../../services/board.service';
 
 
@@ -14,9 +15,8 @@ export class BoardComponent implements OnInit {
   constructor(private boardService : BoardService) { }
 
   ngOnInit(): void {
-    console.log("The board is being initialized...")
-    this.boardService.boardState.subscribe((state) => {
-      this.state = state;
+    this.boardService.boardMaster.subscribe((boardMaster : BoardMaster) => {
+      this.state = boardMaster.state;
     })
   }
 }

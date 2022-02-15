@@ -14,7 +14,7 @@ export class StartGameButtonComponent implements OnInit {
   }
 
   startGame() {
-    this.boardService.boardState.next("in-progress");
+    this.boardService.startGame();
   }
 
 }

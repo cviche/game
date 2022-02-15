@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { container } from '../../animations/animations.animation';
+import { BoardMaster } from '../../interfaces/board-master.interface';
 import { BoardService } from '../../services/board.service';
 
 @Component({
@@ -10,11 +11,16 @@ import { BoardService } from '../../services/board.service';
 })
 export class GameStateComponent implements OnInit, OnDestroy {
   cards!: number[];
+  playerScore!: number;
+  botScore!: number;
   constructor(private boardService: BoardService) { }
 
   ngOnInit(): void {
-    this.boardService.boardCards.subscribe((cards : number[]) => {
-      this.cards = cards;
+    this.boardService.boardMaster.subscribe((boardMaster : BoardMaster) => {
+      this.cards = boardMaster.cards;
+      this.playerScore = boardMaster.playerScore;
+      this.botScore = boardMaster.botScore;
+
     })
   }
 

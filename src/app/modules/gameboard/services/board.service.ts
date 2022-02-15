@@ -1,27 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Subject, BehaviorSubject } from "rxjs";
+import { BehaviorSubject } from "rxjs";
+import { BoardMaster } from '../interfaces/board-master.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BoardService {
-  boardState : Subject<string> = new Subject<string>();
-  boardCards: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
-  maxCards: number = 6;
-  playersTurn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
-  playerScore: BehaviorSubject<number> = new BehaviorSubject<number>(0);
-  botScore: BehaviorSubject<number> = new BehaviorSubject<number>(0);
-
+  boardMaster: BehaviorSubject<BoardMaster> = new BehaviorSubject<BoardMaster>(this.initialBoardMaster());
   constructor() {}
 
    startGame() : void {
-     const newCards = [];
-      for(let i = 0; i < this.maxCards; i++) {
-        newCards.push(i+1);
-      }
-      this.boardCards.next(newCards);
-      this.boardState.next("in-progress");
-      this.playersTurn.next(true);
+      const oldBoardMaster = this.boardMaster.getValue();
+
+      // Creates an array from 1 to maxCards
+      const newCards = new Array(oldBoardMaster.maxCards).fill(0).map((value, idx) => idx+1);
+
+      this.boardMaster.next({...oldBoardMaster, 
+        state: "in-progress",
+        currentTurn: "You",
+        cards: newCards
+      });
    }
 
    endGame() : void {
@@ -30,18 +28,34 @@ export class BoardService {
    }
 
    startRules() : void {
-     this.boardState.next("rules");
+     const oldBoardMaster = this.boardMaster.getValue();
+     this.boardMaster.next({...oldBoardMaster, state: "rules"});
    }
 
    exitRules() : void {
-    this.boardState.next("initial");
+    const oldBoardMaster = this.boardMaster.getValue();
+    this.boardMaster.next({...oldBoardMaster, state: "initial"});
    }
 
    removeCard(cardValue: number) {
-     if(this.playersTurn.getValue()) {
-      const newBoardCards = this.boardCards.getValue().filter((currentCardValue : number) => currentCardValue !== cardValue);
-      this.playersTurn.next(false);
-      this.boardCards.next(newBoardCards);
+      const oldBoardMaster = this.boardMaster.getValue();
+     if(oldBoardMaster.currentTurn === "You") {
+      const newBoardCards = oldBoardMaster.cards.filter((currentCardValue : number) => currentCardValue !== cardValue);
+      this.boardMaster.next({...oldBoardMaster, 
+      currentTurn: "Bot",
+      cards: newBoardCards
+      });
      }
+    }
+
+    initialBoardMaster() : BoardMaster {
+      return {
+        state: "initial",
+        cards: [],
+        maxCards: 6,
+        currentTurn: "You",
+        playerScore: 0,
+        botScore: 0
+      }
     }
 }
