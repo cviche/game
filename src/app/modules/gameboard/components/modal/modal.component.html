@@ -4,18 +4,6 @@
             <h2 class="rules-exit text-danger px-2 m-0" (click)="exitRules()">&#x2715;</h2>
             <h3 class="rules-text">Rules</h3>
         </div>
-        <p class="text-center">You and the bot will each get three turns
-            to choose a number. The way
-            to win is to get the highest
-            positive number when adding all the numbers you have chosen. </p>
-        <p class="text-center">
-            The catch is that one of three
-            rules will be applied at the end
-            of the game:</p>
-        <p class="text-center">1.All numbers both players
-            chose will be turned negative</p>
-        <p class="text-center">2. Odd numbers the player chose will turn negative</p>
-        <p class="text-center">3. Even numbers the player chose will turn negative</p>
-        <modal-form></modal-form>
+        <ng-content></ng-content>
     </div>
 </div>
