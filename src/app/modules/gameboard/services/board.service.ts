@@ -9,6 +9,8 @@ export class BoardService {
   boardCards: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
   maxCards: number = 6;
   playersTurn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+  playerScore: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  botScore: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   constructor() {}
 
