@@ -27,9 +27,24 @@ export class BoardService {
    }
 
    endGame() : void {
-     const oldBoardMaster = this.boardMaster.getValue();
-     this.boardMaster.next({...oldBoardMaster, state: "end"});
+      const oldBoardMaster: BoardMaster = this.boardMaster.getValue();
+      const {playerScore, botScore, playerName} = oldBoardMaster;
+      const [playerWon, rule]: [boolean, string] = this.playerWins(playerScore, botScore);
+      const winner: string = playerWon ? playerName : "Bot";
+      this.boardMaster.next({...oldBoardMaster, state: "end", winner, rule});
+   }
 
+   playerWins(playerScore: number, botScore: number): [boolean, string] {
+      let rules = Math.floor(Math.random()*2);
+      const ruleStringSmall = "The smaller number wins!";
+      const ruleStringLarge = "The larger number wins!";
+      if(rules === 0) {
+        return playerScore > botScore ? [true, ruleStringLarge] : [false, ruleStringLarge];
+      }
+      else {
+        return playerScore > botScore ? [false, ruleStringSmall] : [true, ruleStringSmall];
+
+      }
    }
 
    startRules() : void {
@@ -70,7 +85,7 @@ export class BoardService {
         botScore: 0,
         playerName: "",
         winner: "",
-        rule: 0
+        rule: ""
       }
     }
 }
