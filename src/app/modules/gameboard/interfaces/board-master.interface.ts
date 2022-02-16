@@ -6,6 +6,6 @@ export interface BoardMaster {
     playerScore: number,
     playerName: string
     botScore: number,
-    rule: number
+    rule: string
     winner: string
 }
