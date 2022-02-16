@@ -13,13 +13,15 @@ import { BoardService } from '../../services/board.service';
 })
 export class BoardComponent implements OnInit {
   state!: string;
+  winner!: string;
   gameState!: GameState;
   constructor(private boardService : BoardService) { }
 
   ngOnInit(): void {
     this.boardService.boardMaster.subscribe((boardMaster : BoardMaster) => {
-      this.state = boardMaster.state;
-      const {cards, playerScore, botScore, currentTurn, playerName} = boardMaster;
+      const {cards, playerScore, botScore, currentTurn, playerName, winner, state} = boardMaster;
+      this.state = state;
+      this.winner = winner;
       this.gameState = {
         cards,
         playerScore,

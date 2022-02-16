@@ -8,6 +8,7 @@ import { BoardService } from '../../services/board.service';
 })
 export class EndStateComponent implements OnInit {
   @Input() oldPlayerName !: string;
+  @Input() winner !: string;
   constructor(private boardService : BoardService) { }
 
   ngOnInit(): void {

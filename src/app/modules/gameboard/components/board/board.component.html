@@ -4,5 +4,5 @@
 </modal>
 <game-state *ngIf="state === 'in-progress'" [gameState]="gameState"></game-state>
 <modal @container *ngIf="state === 'end'">
-    <end-state [oldPlayerName]="gameState.playerName"></end-state>
+    <end-state [oldPlayerName]="gameState.playerName" [winner]="winner"></end-state>
 </modal>
