@@ -1,2 +1,8 @@
-<h2>The winner is: {{endState.winner}}</h2>
-<button (click)="playAgain()" class="btn btn-light align-self-center mb-4">Play Again</button>
+<div class="d-flex justify-content-center flex-column align-items-center text-center">
+    <h2>The winner is: {{endState.winner}}</h2>
+    <h3>The rule for this game is:</h3>
+    <h3 class="text-info">{{endState.rule}}</h3>
+    <h3>{{endState.playerName}}'s Score: {{endState.playerScore}}</h3>
+    <h3>Bot's Score: {{endState.botScore}}</h3>
+    <button (click)="playAgain()" class="btn btn-light align-self-center mb-4">Play Again</button>
+</div>
