@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { BoardService } from '../../services/board.service';
 
 @Component({
   selector: 'end-state',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./end-state.component.scss']
 })
 export class EndStateComponent implements OnInit {
-
-  constructor() { }
+  @Input() oldPlayerName !: string;
+  constructor(private boardService : BoardService) { }
 
   ngOnInit(): void {
+  }
+
+  playAgain() : void {
+    this.boardService.startGame(this.oldPlayerName);
   }
 
 }
