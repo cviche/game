@@ -1,9 +1,11 @@
 <div class="board-container d-flex flex-column align-items-center">
     <h1 class="text-light py-2">Reaction Game</h1>
-    <score-card [totalScore]="playerScore" [playerName]="playerName"></score-card>
+    <score-card [totalScore]="gameState.playerScore" [playerName]="gameState.playerName"></score-card>
     <div class="score-card-container">
-        <number-card @container *ngFor="let card of cards" [value]="card" [currentTurn]="currentTurn"></number-card>
+        <number-card @container *ngFor="let card of gameState.cards" [value]="card"
+            [currentTurn]="gameState.currentTurn">
+        </number-card>
     </div>
-    <players-turn [currentPlayerName]="currentTurn"></players-turn>
-    <score-card [totalScore]="botScore" [playerName]="'Bot'"></score-card>
+    <players-turn [currentPlayerName]="gameState.currentTurn"></players-turn>
+    <score-card [totalScore]="gameState.botScore" [playerName]="'Bot'"></score-card>
 </div>

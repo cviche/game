@@ -2,7 +2,7 @@
 <modal @container *ngIf="state === 'rules'">
     <game-rules></game-rules>
 </modal>
-<game-state *ngIf="state === 'in-progress'"></game-state>
+<game-state *ngIf="state === 'in-progress'" [gameState]="gameState"></game-state>
 <modal @container *ngIf="state === 'end'">
     <end-state></end-state>
 </modal>
