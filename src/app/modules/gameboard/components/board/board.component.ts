@@ -12,7 +12,7 @@ import { BoardService } from '../../services/board.service';
   animations: container
 })
 export class BoardComponent implements OnInit {
-  state: string = "initial";
+  state!: string;
   gameState!: GameState;
   constructor(private boardService : BoardService) { }
 
