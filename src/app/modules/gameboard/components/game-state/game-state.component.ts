@@ -30,7 +30,6 @@ export class GameStateComponent implements OnInit, OnChanges {
   letBotChooseCard(cards: number[]) : void{
     setTimeout(() => {
           const botChoice = Math.floor(Math.random()*cards.length);
-          console.log(botChoice);
           this.boardService.removeCard(cards[botChoice]);
     }, 500)
   }
