@@ -1,7 +1,7 @@
 <div class="board-container d-flex flex-column align-items-center">
     <h1 class="text-light py-2">Reaction Game</h1>
     <score-card [totalScore]="gameState.playerScore" [playerName]="gameState.playerName"></score-card>
-    <div class="score-card-container">
+    <div class="score-card-container my-4">
         <number-card @container *ngFor="let card of gameState.cards" [value]="card"
             [currentTurn]="gameState.currentTurn">
         </number-card>
